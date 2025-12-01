@@ -1,11 +1,11 @@
-FROM docker.io/library/alpine:3.17.2 as gvisor-tap-vsock
+FROM docker.io/library/alpine:3.22.2 as gvisor-tap-vsock
 WORKDIR /app/bin
 RUN wget https://github.com/containers/gvisor-tap-vsock/releases/download/v0.6.1/gvproxy-windows.exe && \
     wget https://github.com/containers/gvisor-tap-vsock/releases/download/v0.6.1/vm && \
     chmod +x ./gvproxy-windows.exe ./vm
 RUN find . -type f -exec sha256sum {} \;
 
-FROM docker.io/library/alpine:3.17.2
+FROM docker.io/library/alpine:3.22.2
 RUN apk update && \
     apk upgrade && \
     apk add iproute2 iptables && \
