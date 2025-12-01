@@ -5,7 +5,7 @@ RUN wget https://github.com/containers/gvisor-tap-vsock/releases/download/v0.6.1
     chmod +x ./gvproxy-windows.exe ./vm
 RUN find . -type f -exec sha256sum {} \;
 
-FROM docker.io/library/fedora:37
+FROM docker.io/library/fedora:44
 RUN dnf upgrade -y && \
     dnf install -y iproute iptables-legacy iputils bind-utils wget && \
     dnf clean all
