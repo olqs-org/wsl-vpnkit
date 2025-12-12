@@ -33,7 +33,7 @@ jobs:
         ls -la wsl-vpnkit.tar.gz
 
     - name: Artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v6
       with:
         name: wsl-vpnkit
         path: |
