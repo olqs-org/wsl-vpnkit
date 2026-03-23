@@ -5,7 +5,7 @@ RUN wget https://github.com/containers/gvisor-tap-vsock/releases/download/v0.6.1
     chmod +x ./gvproxy-windows.exe ./vm
 RUN find . -type f -exec sha256sum {} \;
 
-FROM docker.io/library/ubuntu:22.04
+FROM docker.io/library/ubuntu:24.04
 RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y iproute2 iptables iputils-ping dnsutils wget && \
